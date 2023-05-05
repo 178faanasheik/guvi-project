@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration form design</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <body> 
+        <div class="container">
+            <div class="myCard">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="myLeftCtn"> 
+                            <form action="http://localhost/guvi/profile.html" method="POST" class="myForm text-center" id="SIGNUPFORM">
+                                <header> SIGN UP </header>
+                              <form action="profile.html">
+                                <div class="form-group">
+                                    <i class="fas fa-user"></i>
+                                    <input class="myInput" type="text" name="username" placeholder="Username" id="username" required> 
+                                </div>
+    
+                                <div class="form-group">
+                                    <i class="fas fa-envelope"></i>
+                                    <input class="myInput" name="email" placeholder="Email" type="text" id="email" required> 
+                                </div>
+    
+                                <div class="form-group">
+                                    <i class="fas fa-lock"></i>
+                                    <input class="myInput" type="password" id="password" name="password" placeholder="Password" required> 
+                                </div>
+    
+                                <div class="form-group">
+                                    <label>
+                                        <input id="check_1" name="check_1"  type="checkbox" required><small> By signing up i agree with </small> <a href="#!"> Terms and conditions </a></input> 
+                                        <div class="invalid-feedback">You must check the box.</div>
+                                    </label>
+                                </div>
+    
+                                <input type="submit" class="butt" value="CREATE ACCOUNT">
+                                <div class="divider d-flex align-items-center my-4">
+                                    <p class="text-center fw-bold mx-3 mb-0">Or</p>
+                                  </div>
+        
+                                  <button class="btn btn-lg btn-block btn-primary" style="background-color: #f15c48;"
+                                  type="button" ><i class="fab fa-google me-2"></i> Sign in with google</button>
+                     
+                                  <p class="text-center text-muted mt-5 mb-0"> Already have an account? <a href="" 
+                                class="fw-bold text body"><u>Login here </u></a></p>
+                            </form>
+                            </form>
+                        </div>
+                    </div> 
+                    <div class="col-md-6">
+                        <div class="myRightCtn">
+                                <div class="box"><header>Hello World!</header>
+                                
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna 
+                                    aliqua. Ut enim ad minim veniam.</p>
+                                    <input type="button" class="butt_out" value="Learn More"/>
+                                </div>
+                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <script type="text/javascript">
+  $(document).ready(function(){
+    $("form").submit(function(event){
+
+        event.preventDefault()
+   
+
+        {
+            var username =$('input[name=username]').val();
+            var email =$('input[name=email]').val();
+            var password =$('input[name=password').val();
+            alert(name);
+var formdate={username:username,email:email,password,password};
+            $.ajax({url:"http://localhost/guvi/index.html/index.php",type:'POST', data:formdate,success:function(response)
+            {
+                var res = JSON.parse(response);
+					console.log(res);
+					if(res.success == true)
+						$('#message').html('<span style="color: green">Form submitted successfully</span>');
+					else
+						$('#message').html('<span style="color: red">Form not submitted. Some error in running the database query.</span>');
+            }}) 
+        } 
+         
+
+			{
+				$('#message').html('<span style="color: red">Please fill all the fields</span>');
+			}
+
+
+    })
+  })
+
+   
+   </script>         
+</body>
+</html>
